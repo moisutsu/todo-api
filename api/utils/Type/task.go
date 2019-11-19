@@ -1,4 +1,4 @@
-package	Type
+package Type
 
 type Task struct {
 	Date       string `json:"date"`

@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-go fmt main.go
+gofmt -l -w .
 go run main.go
