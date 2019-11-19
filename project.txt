@@ -1,0 +1,18 @@
+フロントエンド React+TypeScript
+バックエンド Go (標準モジュール？)
+Web API  URL:/todo/tasks           実際はバージョンを入れる
+<例>
+GET /tickets - チケットのリストを取得する
+GET /tickets/12 - 指定したチケットの情報を取得する
+POST /tickets - 新しいチケットを作成する
+PUT /tickets/12 - チケット #12 を更新する
+PATCH /tickets/12 - チケット #12 を部分的に更新する
+DELETE /tickets/12 - チケット #12 を削除する
+
+<今回>
+GET /tasks - タスクのリストを取得
+GET /tasks/5 - 5番目のタスクを取得
+POST /tasks - 新しいタスクを作成
+PUT /tasks/5 - 5番目のタスクを更新
+DELETE /tasks/5 - 5番目のタスクを削除
+(PATCHも作る？)
