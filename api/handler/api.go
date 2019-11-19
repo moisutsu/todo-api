@@ -2,6 +2,7 @@ package handler
 
 import (
 	"api/handler/get"
+	"fmt"
 	"net/http"
 )
 
@@ -10,6 +11,8 @@ func Api(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		get.Get(w, r)
+	case "POST":
+		fmt.Println("POST")
 	default:
 		w.WriteHeader(http.StatusBadRequest)
 	}
