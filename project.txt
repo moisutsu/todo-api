@@ -1,6 +1,6 @@
 フロントエンド React+TypeScript
 バックエンド Go (標準モジュール？)
-Web API  URL:/todo/tasks           実際はバージョンを入れる
+Web API  URL:/todo-api/tasks           実際はバージョンを入れる
 <例>
 GET /tickets - チケットのリストを取得する
 GET /tickets/12 - 指定したチケットの情報を取得する
