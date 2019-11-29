@@ -26,3 +26,8 @@ APIの仕様
     postTask(taskの要素) タスクを作成
     putTask(index taskの要素) タスクを更新
     deleteTask(index int) タスクを削除
+
+データベースの属性
+date  date  日付
+body  varchar(1024)  タスク本文
+is_finished tinyint(1)  完了フラグ
