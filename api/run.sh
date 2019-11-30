@@ -2,3 +2,4 @@
 
 gofmt -l -w .
 go run main.go
+
