@@ -1,3 +1,11 @@
 import React from "react"
 
-export default () => <div>Hello world!</div>
+import App from "../components/App"
+
+export default () => {
+    return (
+        <React.Fragment>
+            <App />
+        </React.Fragment>
+    )
+}
