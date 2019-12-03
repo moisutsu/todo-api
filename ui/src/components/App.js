@@ -1,21 +1,26 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
+
+import axios from "axios";
 
 import Header from "./Header"
 import TaskList from "./TaskList"
 
 const App = () => {
     const [tasks, setTasks] = useState([])
+
+    const fetchTasks = async () => {
+        const response = await axios.get("http://localhost:8080/todo-api/tasks")
+        setTasks(response.data)
+    }
+
+    useEffect(() => {
+        fetchTasks()
+    }, [])
+
     return (
         <React.Fragment>
             <Header />
             <TaskList tasks={tasks}/>
-            <button onClick={() => setTasks(tasks.concat({
-        date: "2019年12月1日",
-        body: "Goの勉強",
-        is_finished: false,
-    }))}>
-                Add Task
-            </button>
         </React.Fragment>
     )
 }
