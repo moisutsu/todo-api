@@ -10,7 +10,7 @@ import (
 )
 
 func Post(w http.ResponseWriter, r *http.Request) {
-	if r.Header.Get("Content-Type") != "application/json" {
+	if (r.Header.Get("Content-Type") != "application/json;charset=UTF-8") && (r.Header.Get("Content-Type") != "application/json") {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
