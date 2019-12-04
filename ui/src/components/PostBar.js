@@ -11,6 +11,15 @@ const PostBar = (props) => {
         props.postTask(props.post, getDate());
         props.setPost("");
     }
+    const handleKeyDown = event => {
+        if (event.keyCode === 13) {
+            if (props.post === "") {
+                return;
+            }
+            props.postTask(props.post, getDate());
+            props.setPost("");
+        }
+    }
     const getDate = () => {
         const today = new Date();
         const year = today.getFullYear();
@@ -20,7 +29,7 @@ const PostBar = (props) => {
     }
     return (
         <div>
-            <input value={props.post} onChange={handleChange}/>
+            <input value={props.post} onChange={handleChange} onKeyDown={handleKeyDown}/>
             <button onClick={handleClick}>追加</button>
         </div>
     )
