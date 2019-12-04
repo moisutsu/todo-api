@@ -11,6 +11,7 @@ func Api(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Methods", "DELETE")
 	switch r.Method {
 	case http.MethodGet:
 		get.Get(w, r)

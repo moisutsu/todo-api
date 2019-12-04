@@ -4,7 +4,7 @@ import TaskCard from "./TaskCard";
 const TaskList = (props) => {
     return (
         <React.Fragment>
-            {props.tasks.map((task, index) => <TaskCard {...task} key={index}/>)}
+            {props.tasks.map((task, index) => <TaskCard {...task} key={index} index={index} deleteTask={props.deleteTask}/>)}
         </React.Fragment>
     )
 };

@@ -12,7 +12,11 @@ const App = () => {
 
     const fetchTasks = async () => {
         const response = await axios.get("http://localhost:8080/todo-api/tasks")
-        setTasks(response.data)
+        if (response.data === null || response.data === undefined) {
+            setTasks([])
+        } else {
+            setTasks(response.data)
+        }
     }
 
     const postTask = async (body, date) => {
@@ -24,6 +28,11 @@ const App = () => {
         fetchTasks()
     }
 
+    const deleteTask = async (index) => {
+        await axios.delete("http://localhost:8080/todo-api/tasks/" + index)
+        fetchTasks()
+    }
+
     useEffect(() => {
         fetchTasks()
     }, [])
@@ -32,7 +41,7 @@ const App = () => {
         <React.Fragment>
             <Header />
             <PostBar post={post} setPost={setPost} postTask={postTask}/>
-            <TaskList tasks={tasks}/>
+            <TaskList tasks={tasks} deleteTask={deleteTask}/>
         </React.Fragment>
     )
 }
