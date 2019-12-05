@@ -19,8 +19,20 @@ const App = () => {
         }
     }
 
-    const postTask = async (body, date) => {
+    const putTask = async (index, date, body, is_finished) => {
+        await axios.put("http://localhost:8080/todo-api/tasks/" + index, {
+            date: date,
+            body: body,
+            is_finished: is_finished
+        })
+        fetchTasks()
+    }
+
+    const postTask = async (date, body) => {
         await axios.post("http://localhost:8080/todo-api/tasks", {
+            headers: {
+                "Content-Type": "application/json"
+            },
             date: date,
             body: body,
             is_finished: 0
@@ -41,7 +53,7 @@ const App = () => {
         <React.Fragment>
             <Header />
             <PostBar post={post} setPost={setPost} postTask={postTask}/>
-            <TaskList tasks={tasks} deleteTask={deleteTask}/>
+            <TaskList tasks={tasks} deleteTask={deleteTask} putTask={putTask}/>
         </React.Fragment>
     )
 }

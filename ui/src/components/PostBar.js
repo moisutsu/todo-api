@@ -8,7 +8,7 @@ const PostBar = (props) => {
         if (props.post === "") {
             return;
         }
-        props.postTask(props.post, getDate());
+        props.postTask(getDate(), props.post);
         props.setPost("");
     }
     const handleKeyDown = event => {
@@ -16,7 +16,7 @@ const PostBar = (props) => {
             if (props.post === "") {
                 return;
             }
-            props.postTask(props.post, getDate());
+            props.postTask(getDate(), props.post);
             props.setPost("");
         }
     }
