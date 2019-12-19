@@ -35,9 +35,7 @@ const TaskCard = (props) => {
     const handleCompleteClick = () => {
         props.putTask(props.index, props.date, props.body, !props.is_finished);
     }
-
-    const CompleteButton = props.is_finished ? <Button onClick={handleCompleteClick}>未完了</Button> : <Button onClick={handleCompleteClick}>完了</Button>
-
+    
     return (
     <Card className={classes.card}>
         <CardContent>
