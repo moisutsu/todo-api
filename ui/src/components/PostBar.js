@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "@material-ui/core/Button"
+import Input from "@material-ui/core/Input"
 
 const PostBar = (props) => {
     const handleChange = event => {
@@ -29,8 +31,8 @@ const PostBar = (props) => {
     }
     return (
         <div>
-            <input value={props.post} onChange={handleChange} onKeyDown={handleKeyDown}/>
-            <button onClick={handleClick}>追加</button>
+            <Input value={props.post} onChange={handleChange} onKeyDown={handleKeyDown}/>
+            <Button onClick={handleClick}>追加</Button>
         </div>
     )
 };
